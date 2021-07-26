@@ -1,0 +1,13 @@
+{% extends "flights/layout.html"%}
+   {% block body%}
+     <h1>Flights</h1>
+    <ul>
+    {% for flight in flights%}
+       <li> <a href ="{% url 'flight' flight.id %}">Flight : {{ flight.id}}</a>{{ flight.Origin}}  to {{ flight.Destination}}</li>
+    {% endfor%}
+     </ul>
+     <ul>
+     {% for names in airports%}
+     <li> airport name: {{names.City}}({{ names.Code}})</li>
+     {%endfor%}
+    {%endblock%}
